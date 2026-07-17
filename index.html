@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TLGMDZ4L');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIL Growth — Crecimiento predecible</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --fucsia: #C8005F;
+    --fucsia-light: #E8007A;
+    --fucsia-dim: rgba(200,0,95,0.08);
+    --fucsia-dim2: rgba(200,0,95,0.14);
+    --blanco: #FFFFFF;
+    --gris-fondo: #F6F6F4;
+    --gris-borde: #E5E5E1;
+    --gris-texto: #6B6B69;
+    --gris-claro: #9A9A98;
+    --negro: #111110;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--blanco); color: var(--negro); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+  .lang-bar { display: none; }
+  .lang-switch { display: flex; gap: 4px; align-items: center; }
+  .nav-right { display: flex; align-items: center; gap: 12px; }
+  .lang-btn { background: none; border: 1px solid var(--gris-borde); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer; color: var(--gris-texto); transition: all 0.2s; font-family: 'Inter', sans-serif; }
+  .lang-btn.active { background: var(--negro); color: var(--blanco); border-color: var(--negro); }
+  .lang-btn:hover:not(.active) { border-color: var(--negro); color: var(--negro); }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 56px; display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.93); backdrop-filter: blur(12px); border-bottom: 1px solid var(--gris-borde); }
+  .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.5px; color: var(--negro); }
+  .logo span { color: var(--fucsia); }
+  .nav-cta { background: var(--fucsia); color: var(--blanco); border: none; padding: 10px 22px; border-radius: 6px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--fucsia-light); }
+
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 140px 56px 100px; margin: 0 auto; }
+  .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--fucsia); margin-bottom: 32px; }
+  .hero-headline { font-family: 'Space Grotesk', sans-serif; font-size: clamp(44px, 5.5vw, 76px); font-weight: 700; line-height: 1.06; letter-spacing: -2.5px; max-width: 900px; margin-bottom: 24px; color: var(--negro); }
+  .hero-headline em { font-style: normal; color: var(--fucsia); }
+  .hero-sub { font-size: 19px; color: var(--gris-texto); max-width: 620px; line-height: 1.75; margin-bottom: 52px; font-weight: 400; }
+  .hero-sub strong { color: var(--negro); font-weight: 500; }
+  .cta-group { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .btn-primary { background: var(--fucsia); color: var(--blanco); border: none; padding: 15px 34px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px; cursor: pointer; transition: all 0.2s; }
+  .btn-primary:hover { background: var(--fucsia-light); transform: translateY(-1px); }
+  .cta-note { font-size: 13px; color: var(--gris-claro); }
+
+  /* DOLOR */
+  .dolor { padding: 96px 56px; background: var(--gris-fondo); border-top: 1px solid var(--gris-borde); border-bottom: 1px solid var(--gris-borde); }
+  .dolor-inner { max-width: 1200px; margin: 0 auto; }
+  .dolor h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3vw, 38px); font-weight: 700; letter-spacing: -1px; line-height: 1.2; color: var(--negro); max-width: 760px; margin-bottom: 56px; }
+  .dolor h2 em { font-style: normal; color: var(--fucsia); }
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--fucsia); margin-bottom: 20px; }
+  .dolor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .dolor-item { background: var(--blanco); border: 1px solid var(--gris-borde); border-radius: 12px; padding: 32px 28px; transition: border-color 0.2s; }
+  .dolor-item:hover { border-color: var(--fucsia); }
+  .dolor-item .marker { font-size: 22px; margin-bottom: 14px; }
+  .dolor-item h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: var(--negro); margin-bottom: 10px; letter-spacing: -0.2px; }
+  .dolor-item p { font-size: 14px; color: var(--gris-texto); line-height: 1.65; }
+
+  /* PROPUESTA */
+  .propuesta { padding: 96px 56px; }
+  .propuesta-inner { max-width: 1200px; margin: 0 auto; }
+  .propuesta-header { margin-bottom: 64px; }
+  .propuesta-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; max-width: 760px; margin-bottom: 20px; }
+  .seniority-banner { background: var(--fucsia-dim2); border: 1px solid rgba(200,0,95,0.2); border-radius: 10px; padding: 24px 32px; margin-bottom: 32px; max-width: 860px; }
+  .seniority-banner p { font-size: 17px; color: var(--negro); line-height: 1.65; font-weight: 500; }
+  .seniority-banner p em { font-style: normal; color: var(--fucsia); font-weight: 600; }
+  .propuesta-header > p { font-size: 17px; color: var(--gris-texto); max-width: 640px; line-height: 1.7; margin-bottom: 48px; }
+  .servicios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gris-borde); border: 1px solid var(--gris-borde); border-radius: 12px; overflow: hidden; }
+  .servicio-card { background: var(--blanco); padding: 36px 32px; transition: background 0.2s; }
+  .servicio-card:hover { background: var(--gris-fondo); }
+  .servicio-icono { font-size: 24px; margin-bottom: 16px; }
+  .servicio-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--fucsia); background: var(--fucsia-dim); padding: 3px 8px; border-radius: 4px; margin-bottom: 12px; }
+  .servicio-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 17px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.3px; }
+  .servicio-card p { font-size: 14px; color: var(--gris-texto); line-height: 1.65; }
+
+  /* IA STRIP */
+  .ia-strip { padding: 48px 56px; background: var(--gris-fondo); border-top: 1px solid var(--gris-borde); border-bottom: 1px solid var(--gris-borde); }
+  .ia-strip-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .ia-strip-text h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 10px; }
+  .ia-strip-text p { font-size: 15px; color: var(--gris-texto); line-height: 1.65; }
+  .ia-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .ia-pill { background: var(--blanco); border: 1px solid var(--gris-borde); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; color: var(--negro); }
+
+  /* STEPPER TIMELINE */
+  .timeline-section { padding: 96px 56px; }
+  .timeline-inner { max-width: 1200px; margin: 0 auto; }
+  .timeline-header { margin-bottom: 72px; }
+  .timeline-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; max-width: 900px; }
+
+  .stepper { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; align-items: stretch; }
+  .stepper::before { content: ''; position: absolute; top: 28px; left: calc(16.66% + 16px); right: calc(16.66% + 16px); height: 2px; background: var(--gris-borde); z-index: 0; }
+
+  .step { display: flex; flex-direction: column; align-items: flex-start; padding: 0 24px; position: relative; height: 100%; }
+  .step:first-child { padding-left: 0; }
+  .step:last-child { padding-right: 0; }
+
+  .step-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; position: relative; z-index: 1; width: 100%; }
+  .step-num { width: 56px; height: 56px; border-radius: 50%; background: var(--fucsia); color: var(--blanco); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-title-group { flex: 1; }
+  .step-periodo { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gris-claro); margin-bottom: 2px; }
+  .step-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: -0.5px; color: var(--negro); }
+
+  .step-body { background: var(--gris-fondo); border: 1px solid var(--gris-borde); border-radius: 12px; padding: 28px; width: 100%; flex: 1; display: flex; flex-direction: column; }
+  .step-body ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; flex: 1; }
+  .step-body ul li { font-size: 14px; color: var(--gris-texto); padding-left: 16px; position: relative; line-height: 1.55; }
+  .step-body ul li::before { content: '—'; position: absolute; left: 0; color: var(--fucsia); font-size: 11px; top: 3px; }
+  .step-benefit { background: var(--blanco); border: 1px solid var(--gris-borde); border-left: 3px solid var(--fucsia); border-radius: 6px; padding: 14px 16px; }
+  .step-benefit-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--fucsia); margin-bottom: 6px; }
+  .step-benefit p { font-size: 13px; color: var(--negro); line-height: 1.55; font-weight: 500; }
+
+  /* PARA QUIÉN */
+  .para-quien { padding: 96px 56px; background: var(--gris-fondo); border-top: 1px solid var(--gris-borde); }
+  .para-quien-inner { max-width: 1200px; margin: 0 auto; }
+  .para-quien-inner h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; max-width: 700px; margin-bottom: 56px; }
+  .casos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .caso { padding: 28px 32px; background: var(--blanco); border: 1px solid var(--gris-borde); border-radius: 10px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .caso:hover { border-color: var(--fucsia); box-shadow: 0 0 0 3px var(--fucsia-dim); }
+  .caso-tag { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--fucsia); margin-bottom: 14px; }
+  .caso h3 { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.2px; line-height: 1.3; }
+  .caso p { font-size: 14px; color: var(--gris-texto); line-height: 1.6; }
+
+  /* FORM */
+  .form-section { padding: 96px 56px; border-top: 1px solid var(--gris-borde); }
+  .form-section-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .form-left h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 700; letter-spacing: -1px; line-height: 1.15; margin-bottom: 16px; }
+  .form-left h2 em { font-style: normal; color: var(--fucsia); }
+  .form-left p { font-size: 17px; color: var(--gris-texto); line-height: 1.7; margin-bottom: 32px; }
+  .form-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+  .form-meta-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--gris-claro); }
+  .form-meta-dot { width: 6px; height: 6px; background: var(--fucsia); border-radius: 50%; flex-shrink: 0; }
+  .form-card { background: var(--gris-fondo); border: 1px solid var(--gris-borde); border-radius: 16px; padding: 40px; }
+  .form-field { margin-bottom: 16px; }
+  .form-field label { display: block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gris-texto); margin-bottom: 8px; }
+  .form-field input, .form-field select { width: 100%; background: var(--blanco); border: 1px solid var(--gris-borde); border-radius: 8px; padding: 12px 16px; color: var(--negro); font-family: 'Inter', sans-serif; font-size: 15px; outline: none; transition: border-color 0.2s; }
+  .form-field input:focus, .form-field select:focus { border-color: var(--fucsia); }
+  .btn-submit { width: 100%; background: var(--fucsia); color: var(--blanco); border: none; padding: 14px; border-radius: 8px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
+  .btn-submit:hover { background: var(--fucsia-light); }
+  .success-msg { display: none; text-align: center; padding: 32px 0; }
+  .success-msg .check-big { font-size: 48px; margin-bottom: 16px; }
+  .success-msg h4 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; margin-bottom: 8px; color: var(--negro); }
+  .success-msg p { color: var(--gris-texto); font-size: 15px; }
+
+  footer { padding: 28px 56px; border-top: 1px solid var(--gris-borde); display: flex; justify-content: space-between; align-items: center; }
+  footer p { font-size: 13px; color: var(--gris-claro); }
+
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 300; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
+  .modal-overlay.active { display: flex; }
+  .modal { background: var(--blanco); border: 1px solid var(--gris-borde); border-radius: 16px; padding: 48px; max-width: 480px; width: 90%; position: relative; box-shadow: 0 24px 64px rgba(0,0,0,0.12); max-height: 90vh; overflow-y: auto; }
+  .modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--gris-claro); font-size: 24px; cursor: pointer; line-height: 1; }
+  .modal h3 { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; color: var(--negro); }
+  .modal-sub { font-size: 14px; color: var(--gris-texto); margin-bottom: 32px; }
+
+  @media (max-width: 1024px) {
+    .stepper { grid-template-columns: 1fr; gap: 32px; }
+    .stepper::before { display: none; }
+    .step { padding: 0; }
+  }
+  @media (max-width: 900px) {
+    .dolor-grid { grid-template-columns: repeat(2, 1fr); }
+    .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+    .casos-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-section-inner { grid-template-columns: 1fr; gap: 40px; }
+    .ia-strip-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+  @media (max-width: 640px) {
+    nav, footer { padding-left: 24px; padding-right: 24px; }
+    .nav-right { gap: 8px; }
+    .hero, .propuesta, .timeline-section, .para-quien, .form-section, .ia-strip, .dolor { padding-left: 24px; padding-right: 24px; }
+    .dolor-grid { grid-template-columns: 1fr; }
+    .servicios-grid { grid-template-columns: 1fr; }
+    .casos-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLGMDZ4L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <div class="logo">MIL<span> Growth</span></div>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="nav-cta" onclick="openModal()" data-es="Agenda tu diagnóstico" data-en="Book your diagnosis">Agenda tu diagnóstico</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow" data-es="Estrategia de crecimiento digital" data-en="Digital growth strategy">Estrategia de crecimiento digital</p>
+  <h1 class="hero-headline" data-es="Tu negocio puede crecer de forma <em>predecible.</em>" data-en="Your business can grow in a <em>predictable</em> way.">Tu negocio puede crecer de forma <em>predecible.</em></h1>
+  <p class="hero-sub" data-es="Combinamos <strong>marketing digital, datos, inteligencia artificial y estrategia comercial</strong> para construir el sistema de crecimiento que tu negocio necesita para escalar." data-en="We combine <strong>digital marketing, data, artificial intelligence, and commercial strategy</strong> to build the growth system your business needs to scale.">Combinamos <strong>marketing digital, datos, inteligencia artificial y estrategia comercial</strong> para construir el sistema de crecimiento que tu negocio necesita para escalar.</p>
+  <div class="cta-group">
+    <button class="btn-primary" onclick="openModal()" data-es="Agenda una llamada de diagnóstico" data-en="Book a diagnosis call">Agenda una llamada de diagnóstico</button>
+    <span class="cta-note" data-es="Sin costo · 30 minutos · Sin compromiso" data-en="Free · 30 minutes · No commitment">Sin costo · 30 minutos · Sin compromiso</span>
+  </div>
+</section>
+
+<!-- DOLOR -->
+<section class="dolor">
+  <div class="dolor-inner">
+    <p class="section-label" data-es="El problema" data-en="The problem">El problema</p>
+    <h2 data-es="Muchas empresas crecen.<br><em>Muy pocas saben cómo replicarlo.</em>" data-en="Many companies grow.<br><em>Very few know how to replicate it.</em>">Muchas empresas crecen.<br><em>Muy pocas saben cómo replicarlo.</em></h2>
+    <div class="dolor-grid">
+      <div class="dolor-item">
+        <div class="marker">📊</div>
+        <h3 data-es="Crecimiento intuitivo, no sistemático" data-en="Intuitive growth, not systematic">Crecimiento intuitivo, no sistemático</h3>
+        <p data-es="Los resultados llegan, pero nadie sabe exactamente por qué. Cuando algo falla, tampoco se sabe dónde." data-en="Results come, but nobody knows exactly why. When something fails, nobody knows where either.">Los resultados llegan, pero nadie sabe exactamente por qué. Cuando algo falla, tampoco se sabe dónde.</p>
+      </div>
+      <div class="dolor-item">
+        <div class="marker">🔁</div>
+        <h3 data-es="No pueden replicar lo que funciona" data-en="Can't replicate what works">No pueden replicar lo que funciona</h3>
+        <p data-es="Un mes explotan las ventas, al siguiente caen. Sin un sistema, los picos son suerte — no aprendizaje." data-en="One month sales explode, the next they drop. Without a system, peaks are luck — not learning.">Un mes explotan las ventas, al siguiente caen. Sin un sistema, los picos son suerte — no aprendizaje.</p>
+      </div>
+      <div class="dolor-item">
+        <div class="marker">🎯</div>
+        <h3 data-es="No conocen sus palancas de crecimiento" data-en="Don't know their growth levers">No conocen sus palancas de crecimiento</h3>
+        <p data-es="Invierten en marketing sin saber qué canales, mensajes o audiencias generan el mayor retorno." data-en="They invest in marketing without knowing which channels, messages, or audiences generate the most return.">Invierten en marketing sin saber qué canales, mensajes o audiencias generan el mayor retorno.</p>
+      </div>
+      <div class="dolor-item">
+        <div class="marker">🔀</div>
+        <h3 data-es="Las prioridades cambian todo el tiempo" data-en="Priorities keep shifting">Las prioridades cambian todo el tiempo</h3>
+        <p data-es="Es difícil sostener un plan cuando todo es urgente. Sin foco, los recursos se dispersan y los resultados no llegan." data-en="It's hard to stick to a plan when everything is urgent. Without focus, resources scatter and results don't come.">Es difícil sostener un plan cuando todo es urgente. Sin foco, los recursos se dispersan y los resultados no llegan.</p>
+      </div>
+      <div class="dolor-item">
+        <div class="marker">📈</div>
+        <h3 data-es="No tienen los perfiles para escalar" data-en="Don't have the profiles to scale">No tienen los perfiles para escalar</h3>
+        <p data-es="Los perfiles de Growth estratégico son difíciles de encontrar y de justificar en etapas tempranas. El negocio avanza, pero sin la dirección senior que necesita para escalar." data-en="Strategic Growth profiles are hard to find and justify in early stages. The business moves forward, but without the senior direction it needs to scale.">Los perfiles de Growth estratégico son difíciles de encontrar y de justificar en etapas tempranas. El negocio avanza, pero sin la dirección senior que necesita para escalar.</p>
+      </div>
+      <div class="dolor-item">
+        <div class="marker">🧩</div>
+        <h3 data-es="El producto no convierte ni retiene como podría" data-en="The product doesn't convert or retain as it could">El producto no convierte ni retiene como podría</h3>
+        <p data-es="A veces la mayor oportunidad de crecimiento está en el producto mismo — en el onboarding, en la experiencia o en cómo se monetiza cada etapa del ciclo de vida del cliente." data-en="Sometimes the biggest growth opportunity is in the product itself — in onboarding, in the experience, or in how each stage of the customer lifecycle is monetized.">A veces la mayor oportunidad de crecimiento está en el producto mismo — en el onboarding, en la experiencia o en cómo se monetiza cada etapa del ciclo de vida del cliente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPUESTA -->
+<section class="propuesta">
+  <div class="propuesta-inner">
+    <div class="propuesta-header">
+      <p class="section-label" data-es="Qué hacemos" data-en="What we do">Qué hacemos</p>
+      <h2 data-es="El área de Growth que tu empresa necesita." data-en="The Growth division your company needs.">El área de Growth que tu empresa necesita.</h2>
+      <div class="seniority-banner">
+        <p data-es="Aportamos el <em>seniority estratégico</em> que hace crecer a las empresas — sin el costo ni el tiempo de incorporarlo a la estructura. Y cuando el negocio esté listo para armar su propio equipo de Growth, ayudamos a definir los perfiles, el proceso de selección y la forma de trabajar." data-en="We bring the <em>strategic seniority</em> that makes companies grow — without the cost or time of adding it to the headcount. And when the business is ready to build its own Growth team, we help define the profiles, the hiring process, and how to work together.">Aportamos el <em>seniority estratégico</em> que hace crecer a las empresas — sin el costo ni el tiempo de incorporarlo a la estructura. Y cuando el negocio esté listo para armar su propio equipo de Growth, ayudamos a definir los perfiles, el proceso de selección y la forma de trabajar.</p>
+      </div>
+      <p data-es="Actuamos como el área de Growth de tu empresa: con estrategia, datos, herramientas de inteligencia artificial y supervisión real de la ejecución." data-en="We act as your company's Growth division: with strategy, data, AI tools, and real execution oversight.">Actuamos como el área de Growth de tu empresa: con estrategia, datos, herramientas de inteligencia artificial y supervisión real de la ejecución.</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card">
+        <div class="servicio-tag" data-es="Diagnóstico" data-en="Diagnosis">Diagnóstico</div>
+        <div class="servicio-icono">🔍</div>
+        <h3 data-es="Diagnóstico de crecimiento" data-en="Growth diagnosis">Diagnóstico de crecimiento</h3>
+        <p data-es="Analizamos el negocio, los canales, el producto y los datos para identificar las palancas reales de crecimiento y los frenos que las están limitando." data-en="We analyze the business, channels, product, and data to identify real growth levers and the bottlenecks holding them back.">Analizamos el negocio, los canales, el producto y los datos para identificar las palancas reales de crecimiento y los frenos que las están limitando.</p>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-tag" data-es="Go-to-Market" data-en="Go-to-Market">Go-to-Market</div>
+        <div class="servicio-icono">🚀</div>
+        <h3 data-es="Estrategia Go-to-Market" data-en="Go-to-Market strategy">Estrategia Go-to-Market</h3>
+        <p data-es="Definimos cómo llevar un producto o servicio al mercado: segmentación, posicionamiento, propuesta de valor, canales de distribución y modelo comercial." data-en="We define how to bring a product or service to market: segmentation, positioning, value proposition, distribution channels, and commercial model.">Definimos cómo llevar un producto o servicio al mercado: segmentación, posicionamiento, propuesta de valor, canales de distribución y modelo comercial.</p>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-tag" data-es="Crecimiento" data-en="Growth">Crecimiento</div>
+        <div class="servicio-icono">📐</div>
+        <h3 data-es="Plan de crecimiento" data-en="Growth plan">Plan de crecimiento</h3>
+        <p data-es="Definimos la hoja de ruta completa: canales, mensajes, audiencias, presupuesto, métricas de éxito e indicadores de desvío. Sin ambigüedad, sin improvisación." data-en="We define the complete roadmap: channels, messages, audiences, budget, success metrics, and deviation indicators. No ambiguity, no improvisation.">Definimos la hoja de ruta completa: canales, mensajes, audiencias, presupuesto, métricas de éxito e indicadores de desvío. Sin ambigüedad, sin improvisación.</p>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-tag" data-es="Producto" data-en="Product">Producto</div>
+        <div class="servicio-icono">🔄</div>
+        <h3 data-es="Ciclo de vida del cliente" data-en="Customer lifecycle">Ciclo de vida del cliente</h3>
+        <p data-es="Analizamos cómo el producto adquiere, activa, retiene y monetiza usuarios. Identificamos fricciones en el onboarding y oportunidades de mejora en cada etapa." data-en="We analyze how the product acquires, activates, retains, and monetizes users. We identify onboarding friction and improvement opportunities at every stage.">Analizamos cómo el producto adquiere, activa, retiene y monetiza usuarios. Identificamos fricciones en el onboarding y oportunidades de mejora en cada etapa.</p>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-tag" data-es="Canales" data-en="Channels">Canales</div>
+        <div class="servicio-icono">📣</div>
+        <h3 data-es="Estrategia de canales digitales" data-en="Digital channel strategy">Estrategia de canales digitales</h3>
+        <p data-es="Paid media, contenidos, email — diseñamos la combinación correcta para cada negocio y cada etapa, con foco en eficiencia y retorno." data-en="Paid media, content, email — we design the right mix for each business and stage, focused on efficiency and return.">Paid media, contenidos, email — diseñamos la combinación correcta para cada negocio y cada etapa, con foco en eficiencia y retorno.</p>
+      </div>
+      <div class="servicio-card">
+        <div class="servicio-tag" data-es="Ejecución" data-en="Execution">Ejecución</div>
+        <div class="servicio-icono">⚙️</div>
+        <h3 data-es="Supervisión y acompañamiento" data-en="Oversight and support">Supervisión y acompañamiento</h3>
+        <p data-es="Armamos el equipo de ejecución y lo supervisamos. El plan se implementa, se mide y se ajusta con datos reales — no con intuición." data-en="We build the execution team and oversee it. The plan is implemented, measured, and adjusted with real data — not intuition.">Armamos el equipo de ejecución y lo supervisamos. El plan se implementa, se mide y se ajusta con datos reales — no con intuición.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IA STRIP -->
+<section class="ia-strip">
+  <div class="ia-strip-inner">
+    <div class="ia-strip-text">
+      <h3 data-es="Datos e inteligencia artificial en cada decisión" data-en="Data and AI in every decision">Datos e inteligencia artificial en cada decisión</h3>
+      <p data-es="No trabajamos por intuición. Usamos datos, automatización e IA para analizar más rápido, personalizar mejor y escalar sin perder calidad ni control." data-en="We don't work on intuition. We use data, automation, and AI to analyze faster, personalize better, and scale without losing quality or control.">No trabajamos por intuición. Usamos datos, automatización e IA para analizar más rápido, personalizar mejor y escalar sin perder calidad ni control.</p>
+    </div>
+    <div class="ia-pills">
+      <span class="ia-pill" data-es="Análisis y diseño de campañas" data-en="Campaign analysis and design">Análisis y diseño de campañas</span>
+      <span class="ia-pill" data-es="Diagnóstico de funnel" data-en="Funnel diagnosis">Diagnóstico de funnel</span>
+      <span class="ia-pill" data-es="Arquitectura de mensajes" data-en="Message architecture">Arquitectura de mensajes</span>
+      <span class="ia-pill" data-es="Reportes de performance" data-en="Performance reporting">Reportes de performance</span>
+      <span class="ia-pill" data-es="Auditoría de canales" data-en="Channel audit">Auditoría de canales</span>
+      <span class="ia-pill" data-es="Ciclo de vida del cliente" data-en="Customer lifecycle">Ciclo de vida del cliente</span>
+    </div>
+  </div>
+</section>
+
+<!-- STEPPER TIMELINE -->
+<section class="timeline-section">
+  <div class="timeline-inner">
+    <div class="timeline-header">
+      <p class="section-label" data-es="Qué esperar" data-en="What to expect">Qué esperar</p>
+      <h2 data-es="Un proceso claro, con resultados desde el primer mes." data-en="A clear process, with results from day one.">Un proceso claro, con resultados desde el primer mes.</h2>
+    </div>
+    <div class="stepper">
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">01</div>
+          <div class="step-title-group">
+            <div class="step-periodo" data-es="Mes 1" data-en="Month 1">Mes 1</div>
+            <div class="step-title" data-es="Diagnóstico" data-en="Diagnosis">Diagnóstico</div>
+          </div>
+        </div>
+        <div class="step-body">
+          <ul>
+            <li data-es="Auditoría de canales, campañas y performance actual" data-en="Audit of current channels, campaigns, and performance">Auditoría de canales, campañas y performance actual</li>
+            <li data-es="Seteo de objetivos de negocio y métricas de referencia" data-en="Business objectives and reference metrics setup">Seteo de objetivos de negocio y métricas de referencia</li>
+            <li data-es="Análisis del ciclo de vida del cliente: adquisición, activación, retención" data-en="Customer lifecycle analysis: acquisition, activation, retention">Análisis del ciclo de vida del cliente: adquisición, activación, retención</li>
+            <li data-es="Evaluación del producto: fricciones en el onboarding y oportunidades de mejora" data-en="Product evaluation: onboarding friction and improvement opportunities">Evaluación del producto: fricciones en el onboarding y oportunidades de mejora</li>
+            <li data-es="Identificación de palancas de crecimiento prioritarias" data-en="Identification of priority growth levers">Identificación de palancas de crecimiento prioritarias</li>
+          </ul>
+          <div class="step-benefit">
+            <div class="step-benefit-label" data-es="Al finalizar" data-en="On completion">Al finalizar</div>
+            <p data-es="Un mapa claro de dónde está el problema, cuánto está costando no resolverlo y cuál es el potencial real de crecimiento del negocio." data-en="A clear map of where the problem is, how much it costs to leave it unresolved, and what the real growth potential of the business is.">Un mapa claro de dónde está el problema, cuánto está costando no resolverlo y cuál es el potencial real de crecimiento del negocio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">02</div>
+          <div class="step-title-group">
+            <div class="step-periodo" data-es="Mes 2" data-en="Month 2">Mes 2</div>
+            <div class="step-title" data-es="Plan de acción" data-en="Action plan">Plan de acción</div>
+          </div>
+        </div>
+        <div class="step-body">
+          <ul>
+            <li data-es="Go-to-Market: posicionamiento, segmentación y propuesta de valor" data-en="Go-to-Market: positioning, segmentation, and value proposition">Go-to-Market: posicionamiento, segmentación y propuesta de valor</li>
+            <li data-es="Estrategia de canales: cuáles activar, en qué orden y con qué presupuesto" data-en="Channel strategy: which to activate, in what order, and with what budget">Estrategia de canales: cuáles activar, en qué orden y con qué presupuesto</li>
+            <li data-es="Arquitectura de mensajes por audiencia y etapa del funnel" data-en="Message architecture by audience and funnel stage">Arquitectura de mensajes por audiencia y etapa del funnel</li>
+            <li data-es="Recomendaciones de producto para mejorar conversión y retención" data-en="Product recommendations to improve conversion and retention">Recomendaciones de producto para mejorar conversión y retención</li>
+            <li data-es="KPIs, métricas de éxito, indicadores de desvío y quick wins" data-en="KPIs, success metrics, deviation indicators, and quick wins">KPIs, métricas de éxito, indicadores de desvío y quick wins</li>
+          </ul>
+          <div class="step-benefit">
+            <div class="step-benefit-label" data-es="Al finalizar" data-en="On completion">Al finalizar</div>
+            <p data-es="Una hoja de ruta lista para ejecutar: con objetivos definidos, presupuesto asignado por canal y métricas acordadas desde el inicio." data-en="A roadmap ready to execute: with defined objectives, budget allocated by channel, and metrics agreed from the start.">Una hoja de ruta lista para ejecutar: con objetivos definidos, presupuesto asignado por canal y métricas acordadas desde el inicio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-header">
+          <div class="step-num">03</div>
+          <div class="step-title-group">
+            <div class="step-periodo" data-es="Mes 3 en adelante" data-en="Month 3 onwards">Mes 3 en adelante</div>
+            <div class="step-title" data-es="Ejecución y escala" data-en="Execution and scale">Ejecución y escala</div>
+          </div>
+        </div>
+        <div class="step-body">
+          <ul>
+            <li data-es="Armamos el equipo de ejecución y supervisamos su trabajo" data-en="We build the execution team and oversee their work">Armamos el equipo de ejecución y supervisamos su trabajo</li>
+            <li data-es="Ajustamos el plan mensualmente con datos reales" data-en="We adjust the plan monthly with real data">Ajustamos el plan mensualmente con datos reales</li>
+            <li data-es="Reuniones de seguimiento con métricas y decisiones concretas" data-en="Follow-up meetings with metrics and concrete decisions">Reuniones de seguimiento con métricas y decisiones concretas</li>
+            <li data-es="Dirección estratégica senior sin incorporarla a la estructura" data-en="Senior strategic direction without adding it to the headcount">Dirección estratégica senior sin incorporarla a la estructura</li>
+          </ul>
+          <div class="step-benefit">
+            <div class="step-benefit-label" data-es="Cada mes" data-en="Every month">Cada mes</div>
+            <p data-es="Un reporte de resultados, decisiones tomadas con datos y el plan ajustado para el siguiente período. Crecimiento medible, no percibido." data-en="A results report, data-driven decisions, and the plan adjusted for the next period. Measurable growth, not perceived.">Un reporte de resultados, decisiones tomadas con datos y el plan ajustado para el siguiente período. Crecimiento medible, no percibido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section class="para-quien">
+  <div class="para-quien-inner">
+    <p class="section-label" data-es="Para quién es esto" data-en="Who is this for">Para quién es esto</p>
+    <h2 data-es="¿En cuál de estos momentos está tu empresa?" data-en="Which of these moments is your company in?">¿En cuál de estos momentos está tu empresa?</h2>
+    <div class="casos-grid">
+      <div class="caso">
+        <p class="caso-tag" data-es="Escalar" data-en="Scale">Escalar</p>
+        <h3 data-es="El negocio funciona pero el crecimiento no es predecible" data-en="The business works but growth isn't predictable">El negocio funciona pero el crecimiento no es predecible</h3>
+        <p data-es="Se necesita un sistema que permita crecer de forma sostenida, sin depender de picos esporádicos ni de decisiones intuitivas." data-en="A system is needed to grow sustainably, without depending on sporadic peaks or intuitive decisions.">Se necesita un sistema que permita crecer de forma sostenida, sin depender de picos esporádicos ni de decisiones intuitivas.</p>
+      </div>
+      <div class="caso">
+        <p class="caso-tag" data-es="Go-to-Market" data-en="Go-to-Market">Go-to-Market</p>
+        <h3 data-es="Tu nuevo producto o mercado necesita una estrategia de lanzamiento" data-en="Your new product or market needs a launch strategy">Tu nuevo producto o mercado necesita una estrategia de lanzamiento</h3>
+        <p data-es="Definimos el posicionamiento, la propuesta de valor, los segmentos objetivo y los canales correctos para salir al mercado con foco." data-en="We define the positioning, value proposition, target segments, and right channels to enter the market with focus.">Definimos el posicionamiento, la propuesta de valor, los segmentos objetivo y los canales correctos para salir al mercado con foco.</p>
+      </div>
+      <div class="caso">
+        <p class="caso-tag" data-es="Optimizar" data-en="Optimize">Optimizar</p>
+        <h3 data-es="Se invierte en marketing pero los resultados son inconsistentes" data-en="Marketing investment exists but results are inconsistent">Se invierte en marketing pero los resultados son inconsistentes</h3>
+        <p data-es="Hay presupuesto y acción, pero falta dirección estratégica, métricas claras y foco en lo que realmente mueve la aguja." data-en="There's budget and action, but strategic direction, clear metrics, and focus on what actually moves the needle are missing.">Hay presupuesto y acción, pero falta dirección estratégica, métricas claras y foco en lo que realmente mueve la aguja.</p>
+      </div>
+      <div class="caso">
+        <p class="caso-tag" data-es="Producto" data-en="Product">Producto</p>
+        <h3 data-es="El producto no convierte ni retiene como podría" data-en="The product doesn't convert or retain as it could">El producto no convierte ni retiene como podría</h3>
+        <p data-es="A veces la mayor oportunidad de crecimiento está en el producto mismo — en el onboarding, en la experiencia o en cómo se monetiza cada etapa del ciclo de vida del cliente." data-en="Sometimes the biggest growth opportunity is in the product itself — in onboarding, in the experience, or in how each stage of the customer lifecycle is monetized.">A veces la mayor oportunidad de crecimiento está en el producto mismo — en el onboarding, en la experiencia o en cómo se monetiza cada etapa del ciclo de vida del cliente.</p>
+      </div>
+      <div class="caso">
+        <p class="caso-tag" data-es="Estructurar" data-en="Structure">Estructurar</p>
+        <h3 data-es="El negocio creció bien pero todavía no tiene un equipo de Growth" data-en="The business grew well but doesn't have a Growth team yet">El negocio creció bien pero todavía no tiene un equipo de Growth</h3>
+        <p data-es="No siempre es el momento de incorporar un <span style="white-space:nowrap">C-level de Growth</span>. Nosotros cumplimos ese rol y, cuando el negocio esté listo, ayudamos a armar el equipo." data-en="It's not always the right time to hire a Growth C-level. We fill that role and, when the business is ready, help build the team.">No siempre es el momento de incorporar un <span style="white-space:nowrap">C-level de Growth</span>. Nosotros cumplimos ese rol y, cuando el negocio esté listo, ayudamos a armar el equipo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section" id="contacto">
+  <div class="form-section-inner">
+    <div class="form-left">
+      <h2 data-es="Desbloquea el potencial <em>de tu negocio.</em>" data-en="Unlock your business <em>potential.</em>">Desbloquea el potencial <em>de tu negocio.</em></h2>
+      <p data-es="En 30 minutos analizamos la situación y determinamos si podemos ayudar — y de qué forma." data-en="In 30 minutes we analyze the situation and determine if we can help — and how.">En 30 minutos analizamos la situación y determinamos si podemos ayudar — y de qué forma.</p>
+      <div class="form-meta">
+        <div class="form-meta-item"><div class="form-meta-dot"></div><span data-es="Sin costo" data-en="Free">Sin costo</span></div>
+        <div class="form-meta-item"><div class="form-meta-dot"></div><span data-es="30 minutos" data-en="30 minutes">30 minutos</span></div>
+        <div class="form-meta-item"><div class="form-meta-dot"></div><span data-es="Sin compromiso" data-en="No commitment">Sin compromiso</span></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <div id="form-content-section">
+        <div class="form-field">
+          <label data-es="Nombre" data-en="Name">Nombre</label>
+          <input type="text" id="s-nombre" data-es-placeholder="Tu nombre" data-en-placeholder="Your name" placeholder="Tu nombre">
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" id="s-email" placeholder="tu@empresa.com">
+        </div>
+        <div class="form-field">
+          <label data-es="Empresa / Rubro" data-en="Company / Industry">Empresa / Rubro</label>
+          <input type="text" id="s-empresa" data-es-placeholder="Ej: SaaS, e-commerce, salud..." data-en-placeholder="E.g.: SaaS, e-commerce, health..." placeholder="Ej: SaaS, e-commerce, salud...">
+        </div>
+        <div class="form-field">
+          <label data-es="¿En qué momento está el negocio?" data-en="Where is the business right now?">¿En qué momento está el negocio?</label>
+          <select id="s-momento">
+            <option value="" data-es="Selecciona una opción" data-en="Select an option">Selecciona una opción</option>
+            <option data-es="Quiero escalar un negocio que ya funciona" data-en="I want to scale a business that already works">Quiero escalar un negocio que ya funciona</option>
+            <option data-es="Necesito una estrategia Go-to-Market" data-en="I need a Go-to-Market strategy">Necesito una estrategia Go-to-Market</option>
+            <option data-es="Invierto en marketing pero no veo resultados claros" data-en="I invest in marketing but don't see clear results">Invierto en marketing pero no veo resultados claros</option>
+            <option data-es="Mi producto no convierte o no retiene como debería" data-en="My product doesn't convert or retain as it should">Mi producto no convierte o no retiene como debería</option>
+            <option data-es="Necesito estructurar el crecimiento de mi empresa" data-en="I need to structure my company's growth">Necesito estructurar el crecimiento de mi empresa</option>
+          </select>
+        </div>
+        <button class="btn-submit" onclick="submitSection()" data-es="Solicitar diagnóstico →" data-en="Request diagnosis →">Solicitar diagnóstico →</button>
+      </div>
+      <div class="success-msg" id="success-section">
+        <div class="check-big">✅</div>
+        <h4 data-es="¡Listo!" data-en="Done!">¡Listo!</h4>
+        <p data-es="Nos comunicamos en menos de 24hs. Revisá tu bandeja de entrada." data-en="We'll be in touch within 24hs. Check your inbox.">Nos comunicamos en menos de 24hs. Revisá tu bandeja de entrada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">MIL<span> Growth</span></div>
+  <p>© 2026 MIL Growth</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div id="form-content-modal">
+      <h3 data-es="Agenda tu diagnóstico" data-en="Book your diagnosis">Agenda tu diagnóstico</h3>
+      <p class="modal-sub" data-es="Completá los datos y nos comunicamos en menos de 24hs." data-en="Fill in your details and we'll be in touch within 24hs.">Completá los datos y nos comunicamos en menos de 24hs.</p>
+      <div class="form-field">
+        <label data-es="Nombre" data-en="Name">Nombre</label>
+        <input type="text" id="m-nombre" data-es-placeholder="Tu nombre" data-en-placeholder="Your name" placeholder="Tu nombre">
+      </div>
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" id="m-email" placeholder="tu@empresa.com">
+      </div>
+      <div class="form-field">
+        <label data-es="Empresa / Rubro" data-en="Company / Industry">Empresa / Rubro</label>
+        <input type="text" id="m-empresa" data-es-placeholder="Ej: SaaS, e-commerce, salud..." data-en-placeholder="E.g.: SaaS, e-commerce, health..." placeholder="Ej: SaaS, e-commerce, salud...">
+      </div>
+      <div class="form-field">
+        <label data-es="¿En qué momento está el negocio?" data-en="Where is the business right now?">¿En qué momento está el negocio?</label>
+        <select id="m-momento">
+          <option value="" data-es="Selecciona una opción" data-en="Select an option">Selecciona una opción</option>
+          <option data-es="Quiero escalar un negocio que ya funciona" data-en="I want to scale a business that already works">Quiero escalar un negocio que ya funciona</option>
+          <option data-es="Necesito una estrategia Go-to-Market" data-en="I need a Go-to-Market strategy">Necesito una estrategia Go-to-Market</option>
+          <option data-es="Invierto en marketing pero no veo resultados claros" data-en="I invest in marketing but don't see clear results">Invierto en marketing pero no veo resultados claros</option>
+          <option data-es="Mi producto no convierte o no retiene como debería" data-en="My product doesn't convert or retain as it should">Mi producto no convierte o no retiene como debería</option>
+          <option data-es="Necesito estructurar el crecimiento de mi empresa" data-en="I need to structure my company's growth">Necesito estructurar el crecimiento de mi empresa</option>
+        </select>
+      </div>
+      <button class="btn-submit" onclick="submitModal()" data-es="Solicitar diagnóstico →" data-en="Request diagnosis →">Solicitar diagnóstico →</button>
+    </div>
+    <div class="success-msg" id="success-modal">
+      <div class="check-big">✅</div>
+      <h4 data-es="¡Listo!" data-en="Done!">¡Listo!</h4>
+      <p data-es="Nos comunicamos en menos de 24hs. Revisá tu bandeja de entrada." data-en="We'll be in touch within 24hs. Check your inbox.">Nos comunicamos en menos de 24hs. Revisá tu bandeja de entrada.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentLang = 'es';
+  function setLang(lang) {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.querySelectorAll('[data-es]').forEach(el => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (!text) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'OPTION') return;
+      el.innerHTML = text;
+    });
+    document.querySelectorAll('input[data-es-placeholder]').forEach(el => {
+      el.placeholder = el.getAttribute(`data-${lang}-placeholder`) || '';
+    });
+    document.querySelectorAll('select option[data-es]').forEach(opt => {
+      opt.textContent = opt.getAttribute(`data-${lang}`) || '';
+    });
+  }
+  function openModal() { document.getElementById('modal').classList.add('active'); }
+  function closeModal() { document.getElementById('modal').classList.remove('active'); }
+  function closeOnOverlay(e) { if (e.target === document.getElementById('modal')) closeModal(); }
+  async function submitModal() {
+    const nombre = document.getElementById('m-nombre').value.trim();
+    const email = document.getElementById('m-email').value.trim();
+    const empresa = document.getElementById('m-empresa').value.trim();
+    const momento = document.getElementById('m-momento').value;
+    if (!nombre || !email) { alert(currentLang === 'es' ? 'Por favor completá al menos tu nombre y email.' : 'Please fill in at least your name and email.'); return; }
+    const btn = document.querySelector('#form-content-modal .btn-submit');
+    btn.disabled = true;
+    btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+    try {
+      const res = await fetch('https://formspree.io/f/mrenpwjp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ nombre, email, empresa, momento, fuente: 'Modal' })
+      });
+      if (res.ok) {
+        document.getElementById('form-content-modal').style.display = 'none';
+        document.getElementById('success-modal').style.display = 'block';
+      } else {
+        alert(currentLang === 'es' ? 'Hubo un error. Por favor intentá de nuevo.' : 'There was an error. Please try again.');
+        btn.disabled = false;
+        btn.textContent = currentLang === 'es' ? 'Solicitar diagnóstico →' : 'Request diagnosis →';
+      }
+    } catch(e) {
+      alert(currentLang === 'es' ? 'Hubo un error. Por favor intentá de nuevo.' : 'There was an error. Please try again.');
+      btn.disabled = false;
+      btn.textContent = currentLang === 'es' ? 'Solicitar diagnóstico →' : 'Request diagnosis →';
+    }
+  }
+  async function submitSection() {
+    const nombre = document.getElementById('s-nombre').value.trim();
+    const email = document.getElementById('s-email').value.trim();
+    const empresa = document.getElementById('s-empresa').value.trim();
+    const momento = document.getElementById('s-momento').value;
+    if (!nombre || !email) { alert(currentLang === 'es' ? 'Por favor completá al menos tu nombre y email.' : 'Please fill in at least your name and email.'); return; }
+    const btn = document.querySelector('#form-content-section .btn-submit');
+    btn.disabled = true;
+    btn.textContent = currentLang === 'es' ? 'Enviando...' : 'Sending...';
+    try {
+      const res = await fetch('https://formspree.io/f/mrenpwjp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ nombre, email, empresa, momento, fuente: 'Sección' })
+      });
+      if (res.ok) {
+        document.getElementById('form-content-section').style.display = 'none';
+        document.getElementById('success-section').style.display = 'block';
+      } else {
+        alert(currentLang === 'es' ? 'Hubo un error. Por favor intentá de nuevo.' : 'There was an error. Please try again.');
+        btn.disabled = false;
+        btn.textContent = currentLang === 'es' ? 'Solicitar diagnóstico →' : 'Request diagnosis →';
+      }
+    } catch(e) {
+      alert(currentLang === 'es' ? 'Hubo un error. Por favor intentá de nuevo.' : 'There was an error. Please try again.');
+      btn.disabled = false;
+      btn.textContent = currentLang === 'es' ? 'Solicitar diagnóstico →' : 'Request diagnosis →';
+    }
+  }
+</script>
+</body>
+</html>
